@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grada Bakers · Fresh from the oven in Kiserian</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FCF7F0;--tx:#24130C;--card:#fff;--ras:#D9385A;--gold:#F29F38;--mint:#4D9078;--car:#C46D3B;--blue:#3E4E88;--mut:#6b5446;--line:#e9dccb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1b0f09;--tx:#fcf7f0;--card:#2a1a12;--mut:#c9b3a2;--line:#42291c}}
+:root[data-theme=dark]{--bg:#1b0f09;--tx:#fcf7f0;--card:#2a1a12;--mut:#c9b3a2;--line:#42291c}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.6 'Plus Jakarta Sans',system-ui,sans-serif;overflow-x:hidden;
+background-image:radial-gradient(rgba(120,80,40,.07) 1px,transparent 1px);background-size:5px 5px}
+h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:99px;font-weight:700;border:2px solid transparent;cursor:pointer;font-size:15px;font-family:inherit;transition:.25s}
+.btn-r{background:var(--ras);color:#fff}.btn-r:hover{background:#24130C;transform:translateY(-2px)}
+.btn-g{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.5);backdrop-filter:blur(6px)}.btn-g:hover{background:#fff;color:#24130C}
+nav{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 20px));z-index:50;display:flex;align-items:center;justify-content:space-between;padding:8px 8px 8px 20px;border-radius:99px;background:rgba(252,247,240,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.4);transition:.3s;color:#24130C}
+nav.s{background:rgba(252,247,240,.9);box-shadow:0 8px 30px rgba(36,19,12,.15)}
+.logo{font-family:'Fraunces',serif;font-weight:800;font-size:22px}.logo b{color:var(--ras)}
+nav .links{display:none;gap:22px;font-weight:500;font-size:14px}
+nav .links a:hover{color:var(--ras)}
+nav .btn{min-height:44px;padding:0 18px;font-size:14px;background:#24130C;color:#fff}
+nav .btn:hover{background:var(--ras)}
+@media(min-width:880px){nav .links{display:flex}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden;padding:110px 0 70px;background:#24130C}
+.hero-bg{position:absolute;inset:-5%;background:radial-gradient(circle at 75% 30%,#F29F38 0,transparent 38%),radial-gradient(circle at 20% 80%,#C46D3B 0,transparent 45%),radial-gradient(circle at 90% 90%,#D9385A 0,transparent 35%),linear-gradient(135deg,#5a2d14,#24130C);animation:ken 22s ease-in-out infinite alternate}
+@keyframes ken{to{transform:scale(1.18) translate(-2%,-2%)}}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(36,19,12,.75) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.emoji-float{position:absolute;right:6%;bottom:8%;font-size:clamp(90px,22vw,260px);opacity:.9;z-index:1;filter:drop-shadow(0 20px 30px rgba(0,0,0,.4));animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-16px) rotate(4deg)}}
+.badge{display:inline-block;padding:6px 16px;border-radius:99px;background:var(--gold);color:#24130C;font-weight:700;font-size:12px;letter-spacing:.12em}
+.hero h1{font-size:clamp(40px,9vw,92px);font-weight:800;max-width:800px;margin:20px 0}
+.hero h1 em{color:var(--gold);font-weight:600}
+.hero p{max-width:540px;font-size:clamp(16px,2.4vw,19px);opacity:.92}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.pill{display:inline-block;padding:10px 18px;border-radius:99px;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);font-size:14px;font-weight:500}
+.load>*{opacity:0;transform:translateY(26px);animation:up .9s forwards}
+.load>*:nth-child(2){animation-delay:.2s}.load>*:nth-child(3){animation-delay:.4s}.load>*:nth-child(4){animation-delay:.6s}.load>*:nth-child(5){animation-delay:.8s}
+@keyframes up{to{opacity:1;transform:none}}
+/* marquee */
+.mq{background:var(--ras);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:700;letter-spacing:.14em;font-size:13px}
+.mq.alt{background:var(--blue)}
+.mq div{display:inline-block;animation:mq 30s linear infinite}
+.mq span{padding:0 18px}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+.eyebrow{color:var(--ras);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+h2{font-size:clamp(32px,6vw,54px);font-weight:800;margin:10px 0 14px}
+.lead{color:var(--mut);max-width:560px}
+/* menu */
+.tabs{display:flex;gap:10px;overflow-x:auto;padding:24px 0 8px;scrollbar-width:none}
+.tab{flex:none;min-height:46px;padding:0 20px;border-radius:99px;border:2px solid var(--line);background:var(--card);color:var(--tx);font:700 14px 'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:.2s}
+.tab.on{background:var(--ras);border-color:var(--ras);color:#fff}
+.tab[data-c=cake].on{background:var(--blue);border-color:var(--blue)}.tab[data-c=bread].on{background:var(--gold);border-color:var(--gold);color:#24130C}.tab[data-c=pastry].on{background:var(--mint);border-color:var(--mint)}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));margin-top:20px}
+.card{background:var(--card);border-radius:24px;overflow:hidden;border:1px solid var(--line);transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-8px) rotateX(2deg);box-shadow:0 22px 40px rgba(36,19,12,.18)}
+.card.hide{display:none}
+.ph{height:190px;display:grid;place-items:center;font-size:84px;position:relative}
+.tag{position:absolute;top:14px;left:14px;font:700 11px 'Plus Jakarta Sans';letter-spacing:.06em;padding:5px 12px;border-radius:99px;background:#fff;color:#24130C}
+.body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.body h3{font-size:21px}.body p{margin:0;color:var(--mut);font-size:14px;flex:1}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+.price{font-weight:700;font-size:18px}
+.add{min-height:44px;padding:0 16px;border-radius:99px;background:var(--mint);color:#fff;font-weight:700;font-size:13px;display:inline-flex;align-items:center;transition:.2s}
+.add:hover{background:#24130C;transform:scale(1.04)}
+/* studio */
+.studio{background:#24130C;color:#fcf7f0}
+.split{display:grid;gap:36px}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;align-items:start}}
+.studio .lead{color:#d9c5b4}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chips span{padding:8px 16px;border-radius:99px;font-weight:700;font-size:13px}
+.builder{background:#fcf7f0;color:#24130C;border-radius:28px;padding:24px;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.builder label{display:block;font-weight:700;font-size:13px;margin:16px 0 6px}
+.builder select,.builder input,.builder textarea{width:100%;min-height:48px;padding:10px 14px;border-radius:14px;border:2px solid #e9dccb;background:#fff;color:#24130C;font:500 16px 'Plus Jakarta Sans',sans-serif}
+.builder select:focus,.builder input:focus,.builder textarea:focus{outline:none;border-color:var(--ras)}
+.est{display:flex;justify-content:space-between;align-items:center;margin:20px 0 14px;padding:16px;border-radius:18px;background:linear-gradient(120deg,#F29F38,#F7BE6A)}
+.est b{font:800 28px 'Fraunces',serif}
+.note{font-size:12px;color:#6b5446;margin:10px 0 0;text-align:center}
+.builder .btn{width:100%;background:#25a05a;color:#fff}.builder .btn:hover{background:#24130C}
+/* promise */
+.feat{display:grid;gap:14px;margin-top:26px}
+.feat div{display:flex;gap:14px;align-items:flex-start}
+.feat i{font-style:normal;flex:none;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px}
+.feat b{display:block}.feat span{color:var(--mut);font-size:14px}
+.revs{display:grid;gap:16px}
+.rev{padding:22px;border-radius:22px;color:#fff;transition:transform .3s}.rev:hover{transform:translateY(-6px) rotate(-1deg)}
+.rev p{margin:0 0 12px;font-size:15px}.rev small{font-weight:700;opacity:.9}
+/* footer */
+footer{background:#24130C;color:#fcf7f0;padding:72px 0 40px}
+footer h2{color:var(--gold)}
+.fgrid{display:grid;gap:28px;margin-top:26px}
+@media(min-width:800px){.fgrid{grid-template-columns:repeat(3,1fr)}}
+footer h4{margin:0 0 8px;color:var(--gold);font:700 12px 'Plus Jakarta Sans';letter-spacing:.14em;text-transform:uppercase}
+footer p{margin:0 0 10px;color:#e6d6c6}
+.fb{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.fb .btn{font-size:14px}
+.copy{margin-top:48px;padding-top:20px;border-top:1px solid #4a3326;font-size:13px;color:#b5a090}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.load>*{opacity:1;transform:none}}
+</style></head>
+<body>
+<nav id="nav">
+ <a href="#top" class="logo">Grada <b>Bakers</b></a>
+ <div class="links"><a href="#menu">Daily Bakes</a><a href="#studio">Custom Cake Builder</a><a href="#why">Why Grada</a><a href="#visit">Visit Us</a></div>
+ <a class="btn" href="https://wa.me/254790848424" target="_blank" rel="noopener">Order on WhatsApp</a>
+</nav>
+
+<header class="hero" id="top">
+ <div class="hero-bg"></div><div class="emoji-float" aria-hidden="true">🥐</div>
+ <div class="wrap load">
+  <span class="badge">KISERIAN - KAMURANGA • KISERIAN</span>
+  <h1>Baked Warm Every Morning, <em>Crafted for Every Celebration.</em></h1>
+  <p>From soft golden loaves and flaky morning pastries to show-stopping birthday and wedding cakes—freshly baked right here in Kiserian.</p>
+  <div class="ctas"><a class="btn btn-r" href="#studio">Design Your Custom Cake</a><a class="btn btn-g" href="#menu">Browse Daily Bakes</a></div>
+  <a class="pill" href="tel:+254790848424">📞 Direct WhatsApp &amp; Calls: 0790 848424</a>
+ </div>
+</header>
+
+<div class="mq"><div id="m1"></div></div>
+
+<section id="menu"><div class="wrap">
+ <div class="rv"><span class="eyebrow">Today’s counter</span><h2>Daily Bakes &amp; Celebration Cakes</h2><p class="lead">Fresh from our ovens. Tap any item to order straight on WhatsApp.</p></div>
+ <div class="tabs" id="tabs">
+  <button class="tab on" data-c="all">All Bakes</button><button class="tab" data-c="cake">Celebration Cakes</button><button class="tab" data-c="bread">Fresh Breads &amp; Buns</button><button class="tab" data-c="pastry">Sweet &amp; Savory Pastries</button>
+ </div>
+ <div class="grid" id="grid"></div>
+</div></section>
+
+<div class="mq alt"><div id="m2"></div></div>
+
+<section class="studio" id="studio"><div class="wrap split">
+ <div class="rv">
+  <span class="eyebrow" style="color:var(--gold)">Custom Cake Studio</span>
+  <h2>Your story, layered in cake.</h2>
+  <p class="lead">Birthdays, graduations, baby showers and weddings—designed with you and delivered across Kiserian, Kamuranga and Rongai. Build your order, see a live estimate, and send it to us on WhatsApp in one tap.</p>
+  <div class="chips"><span style="background:var(--ras)">🎂 Birthdays</span><span style="background:var(--blue)">🎓 Graduations</span><span style="background:var(--mint)">🍼 Baby showers</span><span style="background:var(--gold);color:#24130C">💍 Weddings</span></div>
+ </div>
+ <div class="builder rv">
+  <label for="w" style="margin-top:0">Cake weight</label>
+  <select id="w"><option value="2600">1 kg — KES 2,600</option><option value="5000">2 kg — KES 5,000</option><option value="7400">3 kg+ Tiered — from KES 7,400</option></select>
+  <label for="f">Flavor</label>
+  <select id="f"><option value="0">Black Forest</option><option value="300">Red Velvet</option><option value="0">Vanilla Berry</option><option value="300">Tropical Passion</option><option value="0">Chocolate Fudge</option></select>
+  <label for="t">Frosting</label>
+  <select id="t"><option value="0">Fresh Whipped Cream</option><option value="300">Smooth Buttercream</option><option value="800">Custom Fondant</option></select>
+  <label for="d">Pickup / delivery date</label>
+  <input type="date" id="d">
+  <label for="m">Message on the cake</label>
+  <textarea id="m" rows="2" placeholder="e.g. Happy 30th, Amina!"></textarea>
+  <div class="est"><span>Estimated total</span><b id="tot">KES 2,600</b></div>
+  <button class="btn" id="send">Send Order to Grada Bakers on WhatsApp</button>
+  <p class="note">Estimate only—final price and design confirmed with you on WhatsApp.</p>
+ </div>
+</div></section>
+
+<section id="why"><div class="wrap split">
+ <div class="rv">
+  <span class="eyebrow">The Neighborhood Bakery Promise</span>
+  <h2>Small bakery. Big warmth.</h2>
+  <p class="lead">We bake for our neighbors—so everything is made fresh, made close, and made with care.</p>
+  <div class="feat">
+   <div><i style="background:#fbe3a7">🌾</i><p style="margin:0"><b>Fresh daily ingredients</b><span>Butter, eggs and fruit sourced locally, baked at dawn.</span></p></div>
+   <div><i style="background:#d6ebe2">💬</i><p style="margin:0"><b>Fast WhatsApp pre-orders</b><span>Order ahead and collect on your commute along Kiserian-Kamuranga Road.</span></p></div>
+   <div><i style="background:#f8cdd7">🚚</i><p style="margin:0"><b>Reliable event delivery</b><span>Your celebration cake arrives safe, on time, and looking stunning.</span></p></div>
+  </div>
+ </div>
+ <div class="revs">
+  <div class="rev rv" style="background:var(--ras)"><p>“The Black Forest cake was the star of my daughter’s party. Moist, rich, and delivered right on time!”</p><small>★★★★★ Wanjiru M.</small></div>
+  <div class="rev rv" style="background:var(--blue)"><p>“I grab a warm loaf on my way to work every morning. Nothing beats it in Kiserian.”</p><small>★★★★★ Brian O.</small></div>
+  <div class="rev rv" style="background:var(--mint)"><p>“Ordered cupcakes on WhatsApp in two minutes. They were beautiful and tasted even better.”</p><small>★★★★★ Faith K.</small></div>
+ </div>
+</div></section>
+
+<footer id="visit"><div class="wrap">
+ <h2 class="serif">Come say hello.</h2>
+ <div class="fgrid">
+  <div><h4>Find us</h4><p>Kiserian - Kamuranga Road<br>Plus Code: HMFM+H2G<br>Kiserian, Kajiado County</p><div class="fb"><a class="btn btn-r" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=HMFM%2BH2G%20Kiserian">Open in Google Maps</a></div></div>
+  <div><h4>Call or WhatsApp</h4><p>0790 848424</p><div class="fb"><a class="btn btn-g" href="tel:+254790848424">Call now</a><a class="btn btn-r" target="_blank" rel="noopener" href="https://wa.me/254790848424">WhatsApp</a></div></div>
+  <div><h4>Grada Bakers</h4><p>Fresh bread, pastries and custom cakes—baked with love for Kiserian, Kamuranga and Rongai.</p></div>
+ </div>
+ <div class="copy">© 2026 Grada Bakers · Kiserian, Kenya</div>
+</div></footer>
+
+<script>
+const WA='https://wa.me/254790848424',$=s=>document.querySelector(s);
+const items=[
+['cake','Signature Black Forest Celebration Cake',2600,'/ kg','Moist dark chocolate layers, fresh whipped cream, cherries, and chocolate shavings.','🍒','Customer Favorite','linear-gradient(135deg,#f7c6d0,#D9385A)'],
+['cake','Tropical Passion & Mango Cream Cake',2900,'/ kg','Light vanilla sponge layered with zesty Kenyan passion fruit and sweet mango cream.','🥭','Custom Order','linear-gradient(135deg,#fde2a5,#F29F38)'],
+['bread','Golden Butter Milk Loaf',150,'','Soft, pillowy family loaf baked fresh at dawn for daily breakfast.','🍞','Fresh Out of Oven','linear-gradient(135deg,#f6d9a8,#C46D3B)'],
+['bread','Glazed Cinnamon & Raisin Swirls',220,'','Warm brioche rolls swirled with aromatic cinnamon and vanilla icing.','🥮','Fresh Out of Oven','linear-gradient(135deg,#f5cfa6,#C46D3B)'],
+['pastry','Flaky Spiced Beef & Potato Pie',200,'','Crisp golden puff pastry filled with seasoned minced beef.','🥧','Customer Favorite','linear-gradient(135deg,#f6dca6,#F29F38)'],
+['cake','Assorted Mini Cupcake Box of 6',900,'','Vanilla bean, red velvet, and double chocolate cupcakes with vibrant buttercream swirls.','🧁','Custom Order','linear-gradient(135deg,#c9d3f2,#3E4E88)']];
+const fmt=n=>'KES '+n.toLocaleString('en-KE');
+$('#grid').innerHTML=items.map(i=>`<article class="card rv" data-c="${i[0]}"><div class="ph" style="background:${i[7]}"><span class="tag">${i[6]}</span>${i[5]}</div><div class="body"><h3>${i[1]}</h3><p>${i[4]}</p><div class="row"><span class="price">${fmt(i[2])} ${i[3]}</span><a class="add" target="_blank" rel="noopener" href="${WA}?text=${encodeURIComponent('Hi Grada Bakers! I’d like to order: '+i[1]+' ('+fmt(i[2])+' '+i[3]+')')}">+ Order on WhatsApp</a></div></div></article>`).join('');
+$('#tabs').onclick=e=>{const b=e.target.closest('.tab');if(!b)return;document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t===b));
+ document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.c!=='all'&&c.dataset.c!==b.dataset.c))};
+// marquees
+const t1='FRESH FROM THE OVEN IN KISERIAN • CUSTOM CELEBRATION CAKES • DAILY BREAD & PASTRIES • DIRECT WHATSAPP ORDERING •';
+const t2='BIRTHDAYS • GRADUATIONS • BABY SHOWERS • WEDDINGS • KISERIAN • KAMURANGA • RONGAI •';
+const mk=(id,t)=>{$(id).innerHTML=(`<span>${t}</span>`).repeat(8)};mk('#m1',t1);mk('#m2',t2);
+// studio
+const sel=s=>$(s),opt=s=>sel(s).options[sel(s).selectedIndex];
+const calc=()=>{const kg=sel('#w').selectedIndex+1,tot=+sel('#w').value+(+sel('#f').value+ +sel('#t').value)*kg;$('#tot').textContent=fmt(tot)+(kg===3?'+':'');return tot};
+['#w','#f','#t'].forEach(s=>sel(s).onchange=calc);calc();
+const d=new Date();d.setDate(d.getDate()+2);$('#d').min=d.toISOString().slice(0,10);
+$('#send').onclick=()=>{const msg=`Hello Grada Bakers! I’d like to order a custom cake:\n• Weight: ${opt('#w').text.split(' —')[0]}\n• Flavor: ${opt('#f').text}\n• Frosting: ${opt('#t').text}\n• Date: ${$('#d').value||'To be confirmed'}\n• Cake message: ${$('#m').value||'None'}\n• Estimated total: ${$('#tot').textContent}\nPlease confirm availability and final price. Thank you!`;
+ window.open(WA+'?text='+encodeURIComponent(msg),'_blank')};
+// scroll
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body></html>
